@@ -1,0 +1,17 @@
+
+window.customScreens = {} if typeof window.customScreens is 'undefined' or !window.customScreens?
+
+###
+window.customScreens.Event = {
+
+  events: {
+    'change': 'setSchoolAndGroupNames'
+    }
+
+  setSchoolAndGroupNames: () ->
+    # this is executed in the original object context
+    # use @set to return attributes updates
+    null
+
+  }
+###

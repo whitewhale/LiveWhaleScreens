@@ -1,0 +1,88 @@
+
+@import "helvetica-neue.less";
+
+/* Margins */
+
+@marginPrimary:               18px;
+@marginSecondary:             (@marginPrimary / 3 * 2);
+
+@marginPrimary:               0;
+@marginSecondary:             18px;
+
+
+/* Colors */
+
+/*
+@bodyBackground:              @black;
+@backgroundColor:             @black;
+@seriesBackgroundColor:       @black;
+@itemBackgroundColor:         #333;
+@imageBackgroundColor:        @itemBackgroundColor;
+@informationBackgroundColor:  #666;
+@informationShadowColor:      rgba(0, 0, 0, 0.33);
+
+@textColorBright:             @white;
+@textColorMidBright:          #ddd;
+@textColor:                   #aaa;
+
+@linkColor:                   @textColorMidBright;
+@linkColorHover:              @textColorBright;
+*/
+
+/* Inverse Colors */
+
+@bodyBackground:              @white;
+@backgroundColor:             @white;
+@seriesBackgroundColor:       @white;
+@itemBackgroundColor:         #eee;
+@imageBackgroundColor:        @itemBackgroundColor;
+@informationBackgroundColor:  #ccc;
+@informationShadowColor:      rgba(255, 255, 255, 0.33);
+
+@textColorBright:             #333;
+@textColorMidBright:          #555;
+@textColor:                   #777;
+
+@linkColor:                   @textColorMidBright;
+@linkColorHover:              @textColorBright;
+
+/* Font Families */
+
+.bodyFont () {
+  color: @textColorBright;
+  font-family: @helvetica-neue-normal;
+}
+
+.headerFont () {
+  line-height: 1;
+  font-weight: 700;
+  font-family: @helvetica-neue-heavy-condensed;
+  font-stretch: condensed;
+  vertical-align: baseline;
+  
+  strong {
+  }
+  em {
+    font-family: @helvetica-neue-heavy-condensed-oblique;
+  }
+}
+
+.paragraphFont () {
+  color: @textColor;
+  font-size: 1rem;
+  line-height: 1.35;
+  font-style: normal;
+  font-weight: normal;
+  font-family: @helvetica-neue-medium-condensed;
+  font-stretch: condensed;
+
+  strong {
+    color: @textColorMidBright;
+    font-weight: normal;
+    font-family: @helvetica-neue-medium-condensed;
+    font-stretch: condensed;
+  }
+  em {
+    font-family: @helvetica-neue-medium-condensed-oblique;
+  }
+}

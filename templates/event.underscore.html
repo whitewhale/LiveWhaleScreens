@@ -1,0 +1,37 @@
+  <div id="event_<%= id %>" class="item <%= state %>">
+    <div class="image">
+    </div>
+    <div class="information">
+      <div class="wrap">
+        <h2 class="when<%= (proximity != null) ? ' ' + proximity : '' %>">
+          <span class="day"><%= (time != null && time != '') ? day + ',' : day %></span>
+          <span class="time"><%= time %></span>
+          <% if (began_on != null && through != '') { %>
+          <span class="began-on">[<%= began_on %></span>
+          <span class="through">through <%= through %>]</span>
+          <% } else if (began_on != null) { %>
+          <span class="began-on">[Began on <%= began_on %>]</span>
+          <span class="through"></span>
+          <% } else if (through != '') { %>
+          <span class="began-on"></span>
+          <span class="through">[Through <%= through %>]</span>
+          <% } %>
+          <span class="repeat"><%= (repeat != '') ? '[Repeats on ' + repeat + ']' : '' %></span>
+        </h2>
+        <h3 class="what">
+          <%= title %>
+        </h3>
+        <h4 class="where">
+          <%= location_title %>
+        </h4>
+        <p class="about"><%= summary %></p>
+        <p class="who">
+          <% if (typeof group_name != 'undefined') { %><span class="group"><%= group_name %></span><% } %>
+        </p>
+        <p class="contact">
+          <span class="qrcode"></span>
+          <a class="link" href="<%= link_shortened %>" title="<%= title %>"><%= link_shortened.replace(/^http(s?):\/\//i, '') %></a>
+        </p>
+      </div>
+    </div>
+  </div>

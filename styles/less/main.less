@@ -1,0 +1,409 @@
+
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+@import "bootstrap/reset.less";
+@import "custom/variables.less";
+
+/* Base Styles */
+
+html,
+body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 30px;
+}
+
+body {
+  .bodyFont;
+  background-color: @bodyBackground;
+}
+
+h1,
+table,tr,td,th,tbody,thead,
+form,input,select,textarea,label,fieldset,
+iframe,embed,audio,video,object {
+  display: none;
+}
+
+h2,h3,h4,h5,h6 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  .headerFont;
+}
+
+a {
+  color: @linkColor;
+  text-decoration: none;
+  
+  &:hover {
+    color: @linkColorHover;
+  }
+}
+
+p {
+  display: block;
+  margin: 0;
+  padding: 0;
+  .paragraphFont;
+}
+
+/* Positioning */
+
+.lw_widget_type_screens {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.lw_widget_type_screens > div:first-child {
+  position: absolute;
+  left: @marginPrimary;
+  top: @marginPrimary;
+  right: @marginPrimary;
+  bottom: @marginPrimary;
+  overflow: hidden;
+  background-color: @seriesBackgroundColor;
+}
+
+.item {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: @itemBackgroundColor;
+  .opacity(0);
+}
+
+.wrap {
+  position: relative;
+  display: block;
+  margin: 0 @marginSecondary;
+  height: inherit;
+}
+
+/* Major Sections */
+
+.image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 38%;
+  height: 100%;
+  background-color: @imageBackgroundColor;
+  z-index: 2;
+  
+  .wrap {
+    margin: 0;
+    height: auto;
+  }
+}
+
+.information {
+  position: absolute;
+  left: 38%;
+  margin: 0;
+  padding: 0;
+  width: 62%;
+  height: inherit;
+  background-color: @informationBackgroundColor;
+  .box-shadow(0 0 @marginSecondary @informationShadowColor);
+  z-index: 3;
+  
+  .wrap {
+    position: absolute;
+    left: 0;
+    margin: 0 @marginSecondary;
+    padding: @marginSecondary 0 0 0;
+    width: 100%;
+    height: 100%;
+    
+    > * {
+      margin-right: @marginSecondary * 2;
+    }
+  }
+}
+
+/* Information Styles */
+
+.when, .what, .where, .about, .who {
+  &:after {
+    clear: both;
+    content: '.';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }  
+}
+
+.when, .what, .where, .who {
+  > * {
+    float: left;
+  }
+}
+
+.when {
+  font-size: 2rem;
+
+  .day {
+    margin-right: 0.5rem;
+  }
+
+  .began-on {
+    margin-right: 0.25rem;
+  }
+
+  .began-on, .through, .repeat {
+    .paragraphFont;
+    font-size: 1.35rem;
+  }
+    
+  .began-on {
+    clear: left;
+  }
+}
+
+.what {
+  margin-top: 0.5rem;
+  font-size: 1.65rem;
+}
+
+.where {
+  margin-top: 0.25rem;
+  font-size: 1.35rem;
+}
+
+.about {
+  blockquote, pre, code {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    .paragraphFont;
+    white-space: normal;
+  }
+  
+  a {
+    color: @linkColor;
+    
+    &:hover {
+      color: @linkColorHover;
+    }
+  }
+}
+
+.who {
+  position: absolute;
+  left: 0;
+  bottom: 2rem;
+  width: 66%;
+  overflow: hidden;
+  font-size: 1.35rem;
+  
+  > * {
+    float: left;
+    padding-top: 0.1rem;
+    color: @textColorBright;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  
+  .school {
+    margin-right: 0.5rem;
+
+    &:after {
+      content: ":";
+    }
+  }
+}
+
+.contact {
+  position: absolute;
+  left: 0;
+  bottom: @marginSecondary;
+  width: 100%;
+  
+  .link {
+    position: absolute;
+    left: 0;
+    bottom: @marginSecondary;
+    margin-bottom: -0.35rem;
+    width: 66%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .qrcode {
+    position: absolute;
+    right: 0;
+    bottom: @marginSecondary;
+    width: 27%;
+    min-width: 60px;
+    height: 100%;
+    
+    .wrap {
+      margin: -(@marginSecondary * 2) 0 0 -@marginSecondary;
+      
+      img {
+        margin: -100% 0 0 -@marginSecondary;
+        .opacity(72);
+      }
+    }
+  }
+}
+
+/* Transition Styles */
+
+.item.show {
+  left: 0;
+  .opacity(100);
+  .transition(~"left 750ms cubic-bezier(.4,0,.25,1) 0, opacity 510ms linear 250ms");
+  
+  .image {
+    left: 0;
+    .opacity(100);
+    .transition(~"left 900ms cubic-bezier(.37,0,0.2,1) 100ms, opacity 1s linear 250ms");
+  }
+  
+  .information {
+    left: 38%;
+    .transition(left 500ms cubic-bezier(.4,0,.25,1) 100ms);
+
+    .wrap {
+      left: 0;
+      .transition(left 1s ease-in-out);
+    }
+  }
+
+  .contact .qrcode .wrap  {
+    margin-left: -@marginSecondary;
+    .transition(margin-left 450ms ease-out 750ms);
+  }
+}
+
+.item.hide {
+  .opacity(0);
+  .transition(~"left 450ms cubic-bezier(.3,.74,.39,1) 0, opacity 1s");
+  
+  &.to-left {
+    left: -100%;
+  }
+
+  &.to-right {
+    left: 100%;
+  }
+}
+
+.item.move {
+  .transition(left 1ms);
+
+  .image {
+    .opacity(0);
+    .transition(~"left 1ms, opacity 1ms");
+  }
+  
+  .information {
+    .transition(left 1ms);
+
+    .wrap {
+      .transition(left 1ms);
+    }
+  }
+
+  &.to-left {
+    left: -100%;
+
+    .image {
+      left: 0;
+    }
+    
+    .information {
+      left: 38%;
+
+      .wrap {
+        left: 0;
+      }
+    }
+  }
+
+  &.to-right {
+    left: 100%;
+
+    .image {
+      left: 100%;
+    }
+    
+    .information {
+      left: 100%;
+
+      .wrap {
+        left: 100%;
+      }
+    }
+    
+    .contact .qrcode .wrap  {
+      margin-left: @marginSecondary;
+      .transition(margin-left 1ms);
+    }
+  }
+}
+
+/* Styles to Adapt Presentation to Portrait View */
+
+.portrait {
+
+  .image {
+    height: 38%;
+    width: 100%;
+  }
+
+  .information {
+    left: 0;
+    top: 38%;
+    height: 62%;
+    width: 100%;
+  }
+
+  .item.show .information,
+  .item.move.to-left .information {
+    left: 0;
+  }  
+}
+
+/* Styles for Smaller Devices */
+
+@media only screen and (max-width:481px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .who {
+    bottom: 3rem;
+  }
+
+  .contact .qrcode {
+    display: none;
+  }
+
+}
+
+/* LiveWhale Editor Style Overrides */
+
+#lw_page {
+  height: 100%;
+
+  .lw_widget_type_screens {
+    bottom: 26px;
+    height: auto;
+  }
+}
