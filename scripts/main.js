@@ -502,7 +502,8 @@
         this.urlRoot = "//" + (this.app.get('livewhale_host')) + (this.app.get('event_api'));
         id = (this.get('parent') != null ? this.get('parent') : this.id);
         this.fetch({
-          url: (id != null ? "" + this.urlRoot + "/" + id + "@JSON?ts=" + (new Date().valueOf()) : '')
+          url: (id != null ? "" + this.urlRoot + "/" + id + "@JSON?ts=" + (new Date().valueOf()) : ''),
+          dataType: 'jsonp'
         });
         return this;
       }
@@ -739,7 +740,8 @@
         if (this.count === 1) {
           return this.fetch({
             url: "//" + (this.app.get('livewhale_host')) + (this.app.get('items_api')) + "/max/" + (Math.floor(this.app.get('max') * 1.5)),
-            merge: false
+            merge: false,
+            dataType: 'jsonp'
           });
         }
       },

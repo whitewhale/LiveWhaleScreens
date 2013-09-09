@@ -241,6 +241,8 @@ class LiveWhaleWidgetScreens {
     header("Content-Type: application/json"); // set header
     header("Cache-Control: no-cache, must-revalidate"); // set header
     header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // set header
+    header("Access-Control-Allow-Origin: *"); // set header
+    header("Access-Control-Allow-Methods: GET"); // set header
     return $output; // output JSON
   }
 

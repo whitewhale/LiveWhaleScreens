@@ -296,7 +296,7 @@ livewhale.jQuery(document).ready () ->
       @view = new EventView { model: self, app: @app }
       @urlRoot = "//#{@app.get('livewhale_host')}#{@app.get('event_api')}"
       id = (if @get('parent')? then @get('parent') else @id)
-      @fetch({ url: (if id? then "#{@urlRoot}/#{id}@JSON?ts=#{(new Date().valueOf())}" else '') })
+      @fetch({ url: (if id? then "#{@urlRoot}/#{id}@JSON?ts=#{(new Date().valueOf())}" else ''), dataType: 'jsonp' })
       @
 
   EventView = Backbone.View.extend
@@ -429,7 +429,7 @@ livewhale.jQuery(document).ready () ->
     refresh: () ->
       @count += 1
       if @count is 1
-        @fetch { url: "//#{@app.get('livewhale_host')}#{@app.get('items_api')}/max/#{Math.floor(@app.get('max') * 1.5)}", merge: false }
+        @fetch { url: "//#{@app.get('livewhale_host')}#{@app.get('items_api')}/max/#{Math.floor(@app.get('max') * 1.5)}", merge: false, dataType: 'jsonp' }
     resize: () ->
       _.each @models, (item) ->
         item.view.render()
