@@ -64,7 +64,7 @@ class LiveWhaleWidgetScreens {
 
   private function validateScreenArgs(&$args) { // validates the arguments array
     global $_LW;
-    $args = $_LW->widgetArgsArray($args, array( // apply args
+    foreach (array(
       'group_prefix',
       'group',
       'exclude_group',
@@ -73,8 +73,11 @@ class LiveWhaleWidgetScreens {
       'subscription',
       'exclude_subscription',
       'tag',
-      'exclude_tag',
-    ));
+      'exclude_tag') as $key) {
+      if (!is_array($args[$key])) {
+        $args[$key] = array($args[$key]);
+      }
+    }
 
     foreach ($this->javascript_only_args as $key => $value) { // reduce any arrays to the first item
       if (array_key_exists($key, $args)) while (is_array($args[$key])) $args[$key] = array_shift($args[$key]);
@@ -244,11 +247,6 @@ class LiveWhaleWidgetScreens {
     header("Access-Control-Allow-Origin: *"); // set header
     header("Access-Control-Allow-Methods: GET"); // set header
     return $output; // output JSON
-  }
-
-  public function onFetch($request=array()) { // returns images for screens
-    global $_LW;
-    $_LW->logDebug(var_export($request, TRUE));
   }
 
 }
