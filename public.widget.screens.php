@@ -228,7 +228,7 @@ class LiveWhaleWidgetScreens {
     $args =& $_LW->widget['args']; // alias args
     $this->validateScreenArgs($args);
     if (array_key_exists('group_prefix', $args)) { // expand group prefixes into group fullnames
-      $where = "livewhale_groups.fullname LIKE '%" . implode("' " . ((isset($args['group_prefix_mode'])) ? ' AND ' : ' OR ') . " livewhale_groups.fullname LIKE '", $args['group_prefix']) . "%'";
+      $where = "livewhale_groups.fullname LIKE '" . implode("%' " . ((isset($args['group_prefix_mode'])) ? ' AND ' : ' OR ') . " livewhale_groups.fullname LIKE '", $args['group_prefix']) . "%'";
       $groups = $_LW->dbo->query('select', 'livewhale_groups.fullname', 'livewhale_groups', $where)->run();
       if ($groups->hasResults()) {
         if (!array_key_exists('group', $args)) $args['group'] = array();

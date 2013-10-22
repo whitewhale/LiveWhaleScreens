@@ -261,7 +261,7 @@ h6 {
   padding: 0;
   line-height: 1;
   font-weight: 700;
-  font-family: "HelveticaNeueLTStd-HvCn", "HelveticaNeueHeavyCondensed", "HelveticaNeue-Heavy-Condensed", "Helvetica Neue Heavy Condensed", "Helvetica Neue LT Std", "HelveticaNeueHeavy", "HelveticaNeue-Heavy", "Helvetica Neue Heavy", "HelveticaNeue", "Helvetica Neue", Helvetica, Impact, sans-serif;
+  font-family: "HelveticaNeueLTStd-BdCn", "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "Helvetica Neue LT Std", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", Helvetica, Impact, sans-serif;
   font-stretch: condensed;
   vertical-align: baseline;
 }
@@ -270,7 +270,7 @@ h3 em,
 h4 em,
 h5 em,
 h6 em {
-  font-family: "HelveticaNeueLTStd-HvCnO", "HelveticaNeueLTStd-HvCn", "HelveticaNeueHeavyCondensed", "HelveticaNeue-Heavy-Condensed", "Helvetica Neue Heavy Condensed", "Helvetica Neue LT Std", "HelveticaNeueHeavy", "HelveticaNeue-Heavy", "Helvetica Neue Heavy", "HelveticaNeue", "Helvetica Neue", Helvetica, Impact, sans-serif;
+  font-family: "HelveticaNeueLTStd-BdCnO", "HelveticaNeueLTStd-BdCn", "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "Helvetica Neue LT Std", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", Helvetica, Impact, sans-serif;
 }
 a {
   color: #555555;
@@ -288,17 +288,17 @@ p {
   line-height: 1.35;
   font-style: normal;
   font-weight: normal;
-  font-family: "HelveticaNeueLTStd-MdCn", "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeueLTStd-Cn", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Impact, sans-serif;
   font-stretch: condensed;
 }
 p strong {
   color: #555555;
   font-weight: normal;
-  font-family: "HelveticaNeueLTStd-MdCn", "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeueLTStd-Cn", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Impact, sans-serif;
   font-stretch: condensed;
 }
 p em {
-  font-family: "HelveticaNeueLTStd-MdCnO", "HelveticaNeueLTStd-MdCn", "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeueLTStd-CnO", "HelveticaNeueLTStd-Cn", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Impact, sans-serif;
 }
 /* Positioning */
 .lw_widget_type_screens {
@@ -396,7 +396,15 @@ p em {
   font-size: 2rem;
 }
 .when .day {
-  margin-right: 0.5rem;
+  margin: 0 0.5rem 0 0;
+  padding-left: 0.05em;
+}
+.when .time {
+  float: none;
+}
+.when .time:after {
+  content: "\A";
+  white-space: pre;
 }
 .when .began-on {
   margin-right: 0.25rem;
@@ -409,7 +417,7 @@ p em {
   line-height: 1.35;
   font-style: normal;
   font-weight: normal;
-  font-family: "HelveticaNeueLTStd-MdCn", "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeueLTStd-Cn", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Impact, sans-serif;
   font-stretch: condensed;
   font-size: 1.35rem;
 }
@@ -418,13 +426,13 @@ p em {
 .when .repeat strong {
   color: #555555;
   font-weight: normal;
-  font-family: "HelveticaNeueLTStd-MdCn", "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeueLTStd-Cn", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Impact, sans-serif;
   font-stretch: condensed;
 }
 .when .began-on em,
 .when .through em,
 .when .repeat em {
-  font-family: "HelveticaNeueLTStd-MdCnO", "HelveticaNeueLTStd-MdCn", "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeueLTStd-CnO", "HelveticaNeueLTStd-Cn", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Impact, sans-serif;
 }
 .when .began-on {
   clear: left;
@@ -448,7 +456,7 @@ p em {
   line-height: 1.35;
   font-style: normal;
   font-weight: normal;
-  font-family: "HelveticaNeueLTStd-MdCn", "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeueLTStd-Cn", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Impact, sans-serif;
   font-stretch: condensed;
   white-space: normal;
 }
@@ -457,13 +465,13 @@ p em {
 .about code strong {
   color: #555555;
   font-weight: normal;
-  font-family: "HelveticaNeueLTStd-MdCn", "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeueLTStd-Cn", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Impact, sans-serif;
   font-stretch: condensed;
 }
 .about blockquote em,
 .about pre em,
 .about code em {
-  font-family: "HelveticaNeueLTStd-MdCnO", "HelveticaNeueLTStd-MdCn", "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeueLTStd-CnO", "HelveticaNeueLTStd-Cn", "HelveticaNeueRomanCondensed", "HelveticaNeue-Roman-Condensed", "Helvetica Neue Roman Condensed", "HelveticaNeueCondensed", "HelveticaNeue-Condensed", "Helvetica Neue Condensed", "Helvetica Neue LT Std", "HelveticaNeue", "Helvetica Neue", Helvetica, Impact, sans-serif;
 }
 .about a {
   color: #555555;

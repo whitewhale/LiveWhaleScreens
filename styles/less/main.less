@@ -156,7 +156,17 @@ p {
   font-size: 2rem;
 
   .day {
-    margin-right: 0.5rem;
+    margin: 0 0.5rem 0 0;
+    padding-left: 0.05em;
+  }
+
+  .time {
+    float: none;
+  
+    &:after {
+      content: "\A";
+      white-space: pre;
+    }
   }
 
   .began-on {
