@@ -220,8 +220,8 @@ livewhale.jQuery(document).ready () ->
           }, { item: self, app: self.app }
     setImage: () ->
       self = @
-      if @get('thumb')?
-        image = @get('thumb').match(/images\/(\d+)\/(\d+)_(.*?)_[^_]+\.([^\.]+)$/)
+      if @get('thumbnail')?
+        image = @get('thumbnail').match(/gid\/(\d+)\/.*\/(\d+)_([^\.]+)\.([^\.]+)$/)
         if image?
           @image = new Image {
             gid: image[1]
@@ -238,7 +238,7 @@ livewhale.jQuery(document).ready () ->
           when 'id', 'gid', 'parent', 'repeats'
             list[key] = parseInt(value) if value?
           when 'date_dt', 'date2_dt'
-            list[key] = moment(value, 'YYYY-MM-DD HH:mm:ss') if value?
+            list[key] = moment.utc(value, 'YYYY-MM-DD HH:mm:ss').local() if value?
           when 'repeats_until'
             list['repeats_until'] = moment(value, 'MM/DD/YY') if value?
           when 'url'
